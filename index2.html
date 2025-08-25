@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replica Challenge</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: #222;
+    }
+
+    /*NAVBAR */
+    #header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      height: 100px;
+    }
+
+    #navbar {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+    #navbar a{
+      color:black;
+      text-decoration:none;
+    }
+
+    #navbar img {
+      height: 22px;
+      margin-right: 6px;
+    }
+
+    #logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .gradient-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff3b82, #6c63ff, #1e90ff);
+      margin-right: 10px;
+    }
+
+    #hobby {
+      border-radius: 5px;
+      padding: 3px 8px;
+      margin-right: 8px;
+      background-color: #eee;
+      border: none;
+      font-size: 16px;
+    }
+
+    #up-down-arrow, #bell-icon , #book-icon {
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      margin: 0 6px;
+      height: 25px;
+      width: 25px;
+    }
+
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px 10px;
+      flex: 1;
+      max-width: 300px;
+      margin: 0 10px;
+      margin-left:600px;
+    }
+
+    #search-button {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #search-button:hover {
+      background: black;
+      color: white;
+    }
+
+    /* LOWER NAV LINKS */
+    .nav-links {
+      display: flex;
+      border-top: 1px solid #eee;
+      background: #fff;
+      padding: 0 20px;
+    }
+
+    .nav-links a {
+      padding: 14px 10px;
+      color: #555;
+      font-size: 16px;
+      margin-right: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: 20px auto 20px;
+
+    }
+    #search-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+      padding-top: 120px;
+      width:100%;
+      padding-right: 200px;
+      
+    }
+    #search-container input[type="text"] {
+      width: 1000px;
+      height: 50px;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    /* LEFT COLUMN */
+    .left-column {
+      flex: 1;
+    }
+
+    .card {
+      padding-top: 150px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .recent-previews {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .usage-item {
+      justify-content: space-between;
+      font-size: 14px;
+      margin: 6px 0;
+      
+    }
+    #value {
+      color:#555;
+      text-align:right;
+
+    }
+
+    .upgrade-btn {
+      background: black;
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      float: right;
+    }
+
+    /* RIGHT COLUMN */
+    .right-column {
+      flex: 2;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h4 {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div id="navbar">
+      <img src="hii.svg" alt="Logo">
+      <div class="gradient-circle"></div>
+
+      <a href="#" id="logo">Replica's Project</a>
+      <button id="hobby">Hobby</button>
+      <img id="up-down-arrow" src="up-down-arrow.svg" alt="Up Down Arrow">
+      <input type="text" placeholder="Find...">
+      <button id="search-button">Feedback</button>
+      <img id="bell-icon" src="bell-icon.svg" alt="Bell Icon">
+      <img id="book-icon" src="book.svg" alt="Book Icon">
+       <div class="gradient-circle"></div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Overview</a>
+      <a href="#">Integrations</a>
+      <a href="#">Deployments</a>
+      <a href="#">Activity</a>
+      <a href="#">Domains</a>
+      <a href="#">Usage</a>
+      <a href="#">Observability</a>
+      <a href="#">Storage</a>
+      <a href="#">Flags</a>
+      <a href="#">AI Gateway</a>
+      <a href="#">Support</a>
+      <a href="#">Settings</a>
+    </div>
+  </header>
+
+  <div id="search-container">
+    <input type="text" placeholder="Search Projects..."><img src="grid-icon.svg" alt="Grid Icon" style="height:40px; vertical-align:middle; margin-left:10px;border:1px solid #ccc; border-radius: 6px;">
+    <button id="add_new" style="font-size: 14px;margin-left: 10px; border-radius:7px; border-style: none; height:40px; background-color:black; color:white;"><b>Add New...</b><img src="down-arrow.svg" alt="Down Arrow" style="color:white;height:16px; vertical-align:middle; margin-left:4px;"></button>
+  </div>
+
+  <main>
+    <!-- LEFT COLUMN -->
+
+    <div class="left-column">
+      <p style="font-size: 20px; font-weight: bold;">USAGE</p>
+      <div class="card">
+        <h3><button class="upgrade-btn" style="font-size: 15px;">Upgrade</button></h3>
+        <p style="font-size: 15px; color:black;font-weight: bold;">Last 30 days</p>
+        <div class="usage-item"><img src="Progress-circle.png" alt = "Fast Data Transfer" height="20" width="20">Fast Data Transfer: <span id="value">773.59 MB / 100 GB</span></div>
+        <div class="usage-item"><img src="Progress-circle.png" alt = "Edge Requests" height="20" width="20">Edge Requests: <span id="value">6.6K / 1M</span></div>
+        <div class="usage-item"><img src="Progress-circle.png" alt = "Edge Request CPU Duration" height="20" width="20">Edge Request CPU Duration: <span id="value">0s / 1h</span></div>
+      </div>
+
+
+      <br>
+      <h3>Recent Previews</h3>
+      <div class="recent-previews">
+        <p style="font-size: 15px; color: #888;">Preview deployments that you have recently visited or created will appear here.</p>
+        <br>
+        <div class="preview-item">
+          <h4>Preview Deployment 1</h4>
+          <p>Status: Success</p>
+        </div>
+        <div class="preview-item">
+          <h4>Preview Deployment 2</h4>
+          <p>Status: Failed</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+      <h3 style="margin-bottom: 10px;">Projects</h3>
+      <div class="project-card">
+        <h4 style="font-size: 20px;"><img src="favicon1.svg" alt="Project Icon" style="height:40px; vertical-align:middle; margin-right:8px;display:inline">spark-2-k25-2-k26<img src="heart-beart.svg" alt="Heart Beat Icon" style="height:16px; vertical-align:middle; margin-left:350px;height:30px;border:2px solid;border-radius: 50%;"></h4>
+        <br>
+        <button style="border-radius:7px; border-style: none;"><img src="github.svg" alt="GitHub Icon" style="height:16px; vertical-align:middle; margin-right:4px;"><b>Replica/Spark-2K25---2K26</b></button>
+        <br>
+        <p style="font-size: 15px; font-weight: bold;">Added README.md </p>
+        <br>
+        <p style="font-size: 15px; color: #666;">Last updated: Aug 20</p>
+      </div>
+
+      <div class="project-card">
+        <h4 style="font-size: 20px;"><img src="favicon2.png" alt="Project Icon" style="height:40px; vertical-align:middle; margin-right:8px;display:inline">jovian-responsive-page<img src="heart-beart.svg" alt="Heart Beat Icon" style="height:16px; vertical-align:middle; margin-left:330px;height:30px;border:2px solid;border-radius: 50%;"></h4>
+        <br>
+        <button style="border-radius:7px; border-style: none;"><img src="github.svg" alt="GitHub Icon" style="height:16px; vertical-align:middle; margin-right:4px;"><b>Replica/jovian-responsive-...</b></button>
+        <br>
+        <p style="font-weight: bold;font-size: 15px;">Fixed a mistake</p>
+        <br>
+        <p style="font-size: 15px; color: #666;">Last updated: June 27</p>
+      </div>
+      <div class="project-card">
+        <h4><img src="favicon3.png" alt="Project Icon" style="height:20px; vertical-align:middle; margin-right:8px;display:inline">profile</h4>
+        <p>Last updated recently</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
